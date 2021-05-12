@@ -1,0 +1,14 @@
+<h1>Restaurants</h1>
+
+<div class=container>
+
+    <% @restaurants.each do |restaurant| %>
+      <li>
+        <%= link_to restaurant.name, restaurant_path(restaurant) %>
+        <%= restaurant.average_rating.to_s %>
+        <%= link_to "(Edit)", edit_restaurant_path(restaurant) %>
+      </li>
+    <% end %>
+
+<h4><%= link_to "Add a new Restaurant", new_restaurant_path %></h4>
+</div>
